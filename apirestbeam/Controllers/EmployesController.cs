@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace apirestbeam.Controllers
 {
-    public class EmpleadosController : ApiController
+    public class EmployesController : ApiController
     {
     }
 }

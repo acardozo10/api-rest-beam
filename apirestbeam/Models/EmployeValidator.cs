@@ -34,8 +34,6 @@ namespace apirestbeam.Controllers
                 .NotNull().WithMessage("'Estado Empleado' no puede ser vacio o nulo.")
                 .NotEmpty().WithMessage("'Estado Empleado' no puede ser vacio o nulo.")
                 .Must(x => x >=1 && x <=3 ).WithMessage("'Estado Empleado' no valido.");
-
-
         }
 
         public bool isFullAge(DateTime BirthDate)
