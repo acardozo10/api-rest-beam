@@ -5,7 +5,7 @@ using System.Web;
 
 namespace apirestbeam.Models
 {
-    public class EmployeData:Employe
+    public class EmployeeData:Employee
     {
         public string Appointment { get; set; }
     }

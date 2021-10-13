@@ -6,10 +6,10 @@ using System.Web;
 
 namespace apirestbeam.Models
 {
-    public class Employe
+    public class Employee
     {
         [Required]
-        public string GuidEmploye { get; set; }
+        public string GuidEmployee { get; set; }
         [Required]
         public string FullName { get; set; }
         [Required]
@@ -19,7 +19,7 @@ namespace apirestbeam.Models
         [Required]
         public string User { get; set; }
         [Required]
-        public DateTime DateContracting { get; set; }
+        public DateTime HiringDate { get; set; }
         [Required]
         public int  State { get; set; }
         [Required]

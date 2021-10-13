@@ -7,9 +7,9 @@ using System.Web;
 
 namespace apirestbeam.Controllers
 {
-    public class EmployeValidator : AbstractValidator<Employe>
+    public class EmployeeValidator : AbstractValidator<Employee>
     {
-        public EmployeValidator()
+        public EmployeeValidator()
         {
             RuleFor(e => e.FullName)
                     .NotNull().WithMessage("'Nombre' no puede ser vacio o nulo.")
@@ -23,25 +23,25 @@ namespace apirestbeam.Controllers
                 .NotNull().WithMessage("'Pais' no puede ser vacio o nulo.")
                 .NotEmpty().WithMessage("'Pais' no puede ser vacio o nulo.");
             RuleFor(e => e.User)
-               .MinimumLength(6).WithMessage("'Usuario' debe tener minimo 6 caracteres.")
-               .NotNull().WithMessage("'Usuario' no puede ser vacio o nulo.")
-               .NotEmpty().WithMessage("'Usuario' no puede ser vacio o nulo.")
-               .WithMessage("'Usuario' no tiene el formato correcto.");
-            RuleFor(e => e.DateContracting)
+                .Matches(@"(?=[a-zA-Z]*\d){6-12}$").WithMessage("'Usuario' no tiene el formato correcto. Debe contener entre 6 y 12 caracteres de longitud, letras mayúscula, letras minúscula y/o digitos.");
+            RuleFor(e => e.HiringDate)
                 .NotNull().WithMessage("'Fecha de contratación' no puede ser vacio o nulo.")
                 .NotEmpty().WithMessage("'Fecha de contratación' no puede ser vacio o nulo.");
             RuleFor(e => e.State)
                 .NotNull().WithMessage("'Estado Empleado' no puede ser vacio o nulo.")
                 .NotEmpty().WithMessage("'Estado Empleado' no puede ser vacio o nulo.")
                 .Must(x => x >=1 && x <=3 ).WithMessage("'Estado Empleado' no valido.");
+            RuleFor(e => e.AreaId)
+                .NotNull().WithMessage("'Area' no puede ser vacio o nulo.")
+                .NotEmpty().WithMessage("'Area' no puede ser vacio o nulo.");
+            RuleFor(e => e.AppointmentId)
+                .NotNull().WithMessage("'Cargo' no puede ser vacio o nulo.")
+                .NotEmpty().WithMessage("'Cargo' no puede ser vacio o nulo.");
         }
 
         public bool isFullAge(DateTime BirthDate)
         {
             return DateTime.Now.AddYears(-18) >= BirthDate;
-        }
-
-        
+        }        
     }
-}
 }
