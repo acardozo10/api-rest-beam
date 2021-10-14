@@ -23,8 +23,6 @@ namespace apirestbeam.Models
         [Required]
         public int  State { get; set; }
         [Required]
-        public int AreaId { get; set; }
-        [Required]
         public int AppointmentId { get; set; }
         [Required]
         public double Commission { get; set; }

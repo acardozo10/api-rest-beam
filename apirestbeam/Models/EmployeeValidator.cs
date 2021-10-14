@@ -31,9 +31,6 @@ namespace apirestbeam.Controllers
                 .NotNull().WithMessage("'Estado Empleado' no puede ser vacio o nulo.")
                 .NotEmpty().WithMessage("'Estado Empleado' no puede ser vacio o nulo.")
                 .Must(x => x >=1 && x <=3 ).WithMessage("'Estado Empleado' no valido.");
-            RuleFor(e => e.AreaId)
-                .NotNull().WithMessage("'Area' no puede ser vacio o nulo.")
-                .NotEmpty().WithMessage("'Area' no puede ser vacio o nulo.");
             RuleFor(e => e.AppointmentId)
                 .NotNull().WithMessage("'Cargo' no puede ser vacio o nulo.")
                 .NotEmpty().WithMessage("'Cargo' no puede ser vacio o nulo.");
